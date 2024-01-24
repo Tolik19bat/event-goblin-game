@@ -1,0 +1,62 @@
+:root {
+  --cell-size: 64px;
+  --board-size: 4;
+}
+
+body {
+  background-color: #000;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.control {
+  margin: 20px;
+  display: flex;
+}
+
+.score, .miss, .message {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 5px 0 5px;
+}
+
+.btn {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(var(--board-size), 1fr);
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  cursor: url('../img/hammer.png'), auto;
+}
+
+.cell {
+  position: relative;
+  background-color: #fff;
+  width: var(--cell-size);
+  height: var(--cell-size);
+}
+
+.img {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  position: absolute;
+  z-index: 0;
+  background: url('../img/goblin.png');
+  background-size: cover;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
