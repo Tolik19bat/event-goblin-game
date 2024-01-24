@@ -1,1 +1,1 @@
-# event-goblin-game1
+# event-goblin-game [![Build status](https://ci.appveyor.com/api/projects/status/jdy08xkrmxn4eem6?svg=true)](https://ci.appveyor.com/project/Tolik19bat/event-goblin-game) [![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://tolik19bat.github.io/event-goblin-game/)
