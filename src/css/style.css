@@ -1,11 +1,20 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
 :root {
   --cell-size: 64px;
   --board-size: 4;
 }
 
-body {
+html {
   background: linear-gradient(blue, pink);
-  height: 97.5vh;
+}
+
+body {
+
+  height: 100vh;
 }
 
 .board-container {
@@ -21,7 +30,9 @@ body {
   display: flex;
 }
 
-.score, .miss, .message {
+.score,
+.miss,
+.message {
   border-radius: 20%;
   font-size: 16px;
   margin: 0 5px 0 5px;
