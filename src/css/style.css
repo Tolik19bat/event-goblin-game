@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #000;
+  background: linear-gradient(blue, pink);
+  height: 97.5vh;
 }
 
 .board-container {
@@ -21,12 +22,13 @@ body {
 }
 
 .score, .miss, .message {
-  color: #fff;
+  border-radius: 20%;
   font-size: 16px;
   margin: 0 5px 0 5px;
 }
 
 .btn {
+  border-radius: 10px;
   margin-top: 10px;
   cursor: pointer;
 }
@@ -36,12 +38,13 @@ body {
   grid-template-columns: repeat(var(--board-size), 1fr);
   grid-column-gap: 2px;
   grid-row-gap: 2px;
-  cursor: url('../img/hammer.png'), auto;
+  cursor: url('../img/pngegg.png'), auto;
 }
 
 .cell {
   position: relative;
   background-color: #fff;
+  border-radius: 20%;
   width: var(--cell-size);
   height: var(--cell-size);
 }
@@ -53,6 +56,7 @@ body {
   z-index: 0;
   background: url('../img/goblin.png');
   background-size: cover;
+  border-radius: 20%;
 }
 
 .footer {
