@@ -1,4 +1,3 @@
-// Определение класса GameController
 export default class GameController {
   // Конструктор, принимающий элементы доски и гоблина
   constructor(boardEl, goblinEl) {
@@ -40,13 +39,13 @@ export default class GameController {
       do {
         newCellEl =
           this.boardEl.cells[
-            Math.floor(Math.random() * this.boardEl.cells.length)
+          Math.floor(Math.random() * this.boardEl.cells.length)
           ];
       } while (newCellEl === cellEl);
       // Перемещение гоблина в новую ячейку
       newCellEl.appendChild(this.goblinEl.element);
       cellEl = newCellEl;
-    }, 1500);
+    }, 1000);
   }
 
   // Метод остановки игры
@@ -61,6 +60,11 @@ export default class GameController {
       // Увеличение счета попаданий
       this.score += 1;
       this.showScore();
+      // Скрыть гоблина и показать его снова через интервал времени
+      this.goblinEl.hide();
+      setTimeout(() => {
+        this.goblinEl.show();
+      }, 500);
       //Проверка условия победы
       if (this.score >= 5) {
         //установка фона при победе
@@ -68,7 +72,7 @@ export default class GameController {
         this.victory();
       }
     } else {
-      // Увеличение счетчика промахов и отображение
+      // Увеличение счетчика промахов если не было клика по элементу гоблина
       this.miss += 1;
       this.showMiss();
       // Проверка условия завершения игры
@@ -90,7 +94,7 @@ export default class GameController {
     this.boardEl.missEl.textContent = `Промахи: ${this.miss}`;
   }
 
-  // Метод завершения игры
+  // Метод в случае проигрыша
   end() {
     // Остановка игры и удаление слушателя клика
     this.stop();
@@ -105,6 +109,7 @@ export default class GameController {
       .addEventListener("click", this.init);
   }
 
+  // Метод в случае выигрыша
   victory() {
     // Остановка игры и удаление слушателя клика
     this.stop();

@@ -7,4 +7,14 @@ export default class Goblin {
     // Добавление класса "img" к элементу
     this.element.classList.add("img");
   }
+
+  // Метод для скрытия элемента гоблина
+  hide() {
+    this.element.style.display = "none";
+  }
+
+  // Метод для показа элемента гоблина
+  show() {
+    this.element.style.display = "block";
+  }
 }
